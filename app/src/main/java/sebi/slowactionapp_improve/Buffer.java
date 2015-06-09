@@ -2,9 +2,6 @@ package sebi.slowactionapp_improve;
 
 import android.util.Log;
 
-/**
- * Created by Sebi on 30.05.15.
- */
 public class Buffer {
 
     private boolean ready;
@@ -16,7 +13,7 @@ public class Buffer {
 
     public synchronized void getToken()
     {
-        Log.i("getToken", ready +"");
+        Log.d("getToken", ready +"");
         while (!ready)
         {
             try {
@@ -26,7 +23,7 @@ public class Buffer {
             }
         }
         ready = false;
-        notify();
+        notifyAll();
     }
 
     public synchronized void setToken()

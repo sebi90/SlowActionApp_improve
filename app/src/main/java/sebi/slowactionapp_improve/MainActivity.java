@@ -21,8 +21,7 @@ public class MainActivity extends Activity {
     }
 
     public void clicked(View v) {
-        // Wird einmal von main aufgerufen
-        Log.i("clicked", Thread.currentThread().getName());
+        Log.d("clicked", Thread.currentThread().getName());
         EditText input = (EditText) findViewById(R.id.input);
         String s = input.getText().toString();
         TextView output = (TextView) findViewById(R.id.output);

@@ -4,9 +4,6 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by Sebi on 30.05.15.
- */
 public class LongRunningThread extends Thread {
 
     private long total;
@@ -26,13 +23,12 @@ public class LongRunningThread extends Thread {
     public void run() {
 
         buffer.getToken();
-        test();
+        doAction();
         buffer.setToken();
     }
 
-    public void test()
+    public void doAction()
     {
-        // Wird einmal von Thread-xxx aufgerufen
         Log.d("run_LongRunningThread", Thread.currentThread().getName());
         long rest = total;
         while (rest > 0) {
