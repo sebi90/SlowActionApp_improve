@@ -27,8 +27,7 @@ public class LongRunningThread extends Thread {
         buffer.setToken();
     }
 
-    public void doAction()
-    {
+    public void doAction() {
         Log.d("run_LongRunningThread", Thread.currentThread().getName());
         long rest = total;
         while (rest > 0) {
@@ -36,8 +35,8 @@ public class LongRunningThread extends Thread {
 
             try {
                 Thread.sleep(thisTime);
+            } catch (Exception e) {
             }
-            catch (Exception e) {}
 
             rest -= thisTime;
             Request req = new Request(input, "" + rest);

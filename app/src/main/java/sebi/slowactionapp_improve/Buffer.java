@@ -6,16 +6,13 @@ public class Buffer {
 
     private boolean ready;
 
-    public Buffer()
-    {
+    public Buffer() {
         ready = true;
     }
 
-    public synchronized void getToken()
-    {
-        Log.d("getToken", ready +"");
-        while (!ready)
-        {
+    public synchronized void getToken() {
+        Log.d("getToken", ready + "");
+        while (!ready) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -26,8 +23,7 @@ public class Buffer {
         notifyAll();
     }
 
-    public synchronized void setToken()
-    {
+    public synchronized void setToken() {
         ready = true;
         notify();
     }
